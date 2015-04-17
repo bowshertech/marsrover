@@ -1,5 +1,5 @@
 #!/usr/bin/env python
 def test():
-    print("Running a function!")
+    print("Written on the Rasberry Pi!")
 
 test()
