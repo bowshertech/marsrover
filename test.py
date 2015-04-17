@@ -1,2 +1,5 @@
 #!/usr/bin/env python
-print "Im on the rasberry pi"
+def test():
+    print("Running a function!")
+
+test()
