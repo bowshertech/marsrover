@@ -37,26 +37,26 @@ def right(seconds):
 while True:
     try:
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 sys.exit()
-            if event.type == KEYDOWN:
-                if event.key == K_UP:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
                     rr.forward()
                     rr.set_led1(True)
                     rr.set_led2(True)
-                elif event.key == K_DOWN:
+                elif event.key == pygame.K_DOWN:
                     rr.set_led1(True)
                     rr.set_led2(True)
                     rr.reverse()
-                elif event.key == K_RIGHT:
+                elif event.key == pygame.K_RIGHT:
                     rr.set_led1(False)
                     rr.set_led2(True)
                     rr.right()
-                elif event.key == K_LEFT:
+                elif event.key == pygame.K_LEFT:
                     rr.set_led1(True)
                     rr.set_led2(False)
                     rr.left()
-                elif event.key == K_SPACE:
+                elif event.key == pygame.K_SPACE:
                     rr.stop()
                     rr.set_led1(False)
                     rr.set_led2(False)
