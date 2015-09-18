@@ -6,6 +6,8 @@ import pygame
 rr = RaspiRobot()
 
 pygame.init()
+screen = pygame.display.set_mode((640, 480))
+
 pygame.display.set_caption('RaspiRobot')
 pygame.mouse.set_visible(0)
 
