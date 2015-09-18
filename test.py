@@ -5,8 +5,9 @@ import sys
 
 rr = RaspiRobot()
 
-GPIO.setwarnings(False)
-
+pygame.init()
+pygame.display.set_caption('RaspiRobot')
+pygame.mouse.set_visible(0)
 
 def forward(seconds):
     rr.set_led1(1)
@@ -30,9 +31,6 @@ def right(seconds):
     rr.set_led1(0)
     rr.set_led2(1)
     rr.right(seconds)
-
-pygame.display.set_caption('RaspiRobot')
-pygame.mouse.set_visible(0)
 
 while True:
     try:

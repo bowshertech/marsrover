@@ -18,6 +18,8 @@ LED2_PIN = 8
 OC1_PIN = 22
 OC2_PIN = 21
 
+GPIO.setwarnings(False)
+
 class RaspiRobot:
 
     def __init__(self):
