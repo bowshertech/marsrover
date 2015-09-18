@@ -1,7 +1,7 @@
 from raspirobotboard import *
-from pygame import *
 
 import sys
+import pygame
 
 rr = RaspiRobot()
 
