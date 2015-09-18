@@ -5,6 +5,8 @@ import sys
 
 rr = RaspiRobot()
 
+GPIO.setwarnings(False)
+
 
 def forward(seconds):
     rr.set_led1(1)
