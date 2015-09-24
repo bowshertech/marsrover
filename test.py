@@ -61,7 +61,7 @@ def execute_state():
     timer += 1
 
     if state == "reverse":
-        if timer % 10:
+        if timer % 2 == 0:
             blinkleds()
 
         if timer > 100:
