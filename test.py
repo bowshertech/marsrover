@@ -11,28 +11,51 @@ screen = pygame.display.set_mode((640, 480))
 pygame.display.set_caption('RaspiRobot')
 pygame.mouse.set_visible(0)
 
+state = None
+
+blink_state = 1
+
 def forward():
+    global state
+    state = "forward"
     rr.set_led1(1)
     rr.set_led2(1)
     rr.forward()
 
 
 def reverse():
+    global state
+    state = "reverse"
     rr.set_led1(0)
     rr.set_led2(0)
     rr.reverse()
 
 
 def left():
+    global state
+    state = "left"
     rr.set_led1(0)
     rr.set_led2(1)
     rr.left()
 
 
 def right():
+    global state
+    state = "right"
     rr.set_led1(1)
     rr.set_led2(0)
     rr.right()
+
+
+def blinkleds():
+    rr.set_led1(not blink_state)
+    rr.set_led2(not blink_state)
+
+
+def execute_state():
+    if state == "reverse":
+        blinkleds()
+
 
 while True:
     try:
@@ -52,6 +75,8 @@ while True:
                     rr.stop()
                     rr.set_led1(False)
                     rr.set_led2(False)
+
+        execute_state()
 
     except KeyboardInterrupt:
         print("Control C Received!")
