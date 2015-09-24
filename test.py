@@ -52,9 +52,10 @@ def right():
 
 def blinkleds():
     global blink_state
-    print(blink_state)
-    rr.set_led1(not blink_state)
-    rr.set_led2(not blink_state)
+    blink_state = not blink_state
+    print blink_state
+    rr.set_led1(blink_state)
+    rr.set_led2(blink_state)
 
 
 def execute_state():
