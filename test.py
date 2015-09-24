@@ -51,6 +51,8 @@ def right():
 
 
 def stop():
+    global state
+    state = "stopped"
     rr.stop()
     rr.set_led1(0)
     rr.set_led2(0)
