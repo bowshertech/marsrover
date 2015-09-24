@@ -11,28 +11,28 @@ screen = pygame.display.set_mode((640, 480))
 pygame.display.set_caption('RaspiRobot')
 pygame.mouse.set_visible(0)
 
-def forward(seconds):
+def forward():
     rr.set_led1(1)
     rr.set_led2(1)
-    rr.forward(seconds)
+    rr.forward()
 
 
-def reverse(seconds):
+def reverse():
     rr.set_led1(0)
     rr.set_led2(0)
-    rr.reverse(seconds)
+    rr.reverse()
 
 
-def left(seconds):
+def left():
     rr.set_led1(1)
     rr.set_led2(0)
-    rr.left(seconds)
+    rr.left()
 
 
-def right(seconds):
+def right():
     rr.set_led1(0)
     rr.set_led2(1)
-    rr.right(seconds)
+    rr.right()
 
 while True:
     try:
@@ -41,21 +41,13 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    rr.forward()
-                    rr.set_led1(True)
-                    rr.set_led2(True)
+                    forward()
                 elif event.key == pygame.K_DOWN:
-                    rr.set_led1(True)
-                    rr.set_led2(True)
-                    rr.reverse()
+                    reverse()
                 elif event.key == pygame.K_RIGHT:
-                    rr.set_led1(False)
-                    rr.set_led2(True)
-                    rr.right()
+                    right()
                 elif event.key == pygame.K_LEFT:
-                    rr.set_led1(True)
-                    rr.set_led2(False)
-                    rr.left()
+                    left()
                 elif event.key == pygame.K_SPACE:
                     rr.stop()
                     rr.set_led1(False)
