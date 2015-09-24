@@ -51,6 +51,7 @@ def right():
 
 
 def blinkleds():
+    global blink_state
     rr.set_led1(not blink_state)
     rr.set_led2(not blink_state)
 
