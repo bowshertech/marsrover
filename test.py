@@ -93,9 +93,7 @@ while True:
                 elif event.key == pygame.K_LEFT:
                     left()
                 elif event.key == pygame.K_SPACE:
-                    rr.stop()
-                    rr.set_led1(False)
-                    rr.set_led2(False)
+                    stop()
 
         execute_state()
 
