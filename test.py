@@ -50,6 +50,12 @@ def right():
     rr.right()
 
 
+def stop():
+    rr.stop()
+    rr.set_led1(0)
+    rr.set_led2(0)
+
+
 def blinkleds():
     global blink_state
     blink_state = not blink_state
@@ -74,9 +80,7 @@ while True:
     try:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                rr.stop()
-                rr.set_led1(0)
-                rr.set_led2(0)
+                stop()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
