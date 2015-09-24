@@ -15,6 +15,9 @@ state = None
 
 blink_state = 1
 
+timer = 0
+
+
 def forward():
     global state
     state = "forward"
@@ -53,8 +56,15 @@ def blinkleds():
 
 
 def execute_state():
+    global timer
+    timer += 1
+
     if state == "reverse":
-        blinkleds()
+        if timer % 2:
+            blinkleds()
+
+        if timer > 100:
+            timer = 0
 
 
 while True:
