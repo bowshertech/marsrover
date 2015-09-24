@@ -63,7 +63,7 @@ def execute_state():
     timer += 1
 
     if state == "reverse":
-        if timer % 5 == 0:
+        if timer % 100 == 0:
             blinkleds()
 
         if timer > 100:
@@ -74,6 +74,9 @@ while True:
     try:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                rr.stop()
+                rr.set_led1(0)
+                rr.set_led2(0)
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
