@@ -60,9 +60,8 @@ def execute_state():
     global timer
     timer += 1
 
-    print(timer)
-
     if state == "reverse":
+        print(timer % 2)
         if timer % 2 == 0:
             blinkleds()
 
