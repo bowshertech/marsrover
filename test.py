@@ -59,7 +59,6 @@ def stop():
 def blinkleds():
     global blink_state
     blink_state = not blink_state
-    print blink_state
     rr.set_led1(blink_state)
     rr.set_led2(blink_state)
 
@@ -69,7 +68,7 @@ def execute_state():
     timer += 1
 
     if state == "reverse":
-        if timer % 1000 == 0:
+        if timer % 5000 == 0:
             blinkleds()
 
         if timer > 10000:
