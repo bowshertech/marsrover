@@ -63,9 +63,17 @@ class PS4Controller(object):
                 # In the current setup, I have the state simply printing out to the screen.
 
                 os.system('cls')
-                pprint.pprint(self.button_data)
-                pprint.pprint(self.axis_data)
-                pprint.pprint(self.hat_data)
+                if self.button_data[4]:
+                    pprint.pprint("Up button on arrow pad pressed!")
+                if self.button_data[5]:
+                    pprint.pprint("Right button on arrow pad pressed!")
+                if self.button_data[6]:
+                    pprint.pprint("Down button on arrow pad pressed!")
+                if self.button_data[7]:
+                    pprint.pprint("Left button on arrow pad pressed!")
+                # pprint.pprint(self.button_data)
+                # pprint.pprint(self.axis_data)
+                # pprint.pprint(self.hat_data)
 
 
 if __name__ == "__main__":
