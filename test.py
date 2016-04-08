@@ -6,17 +6,25 @@ import pygame
 rr = RaspiRobot()
 
 pygame.init()
+pygame.joystick.init()
+
 screen = pygame.display.set_mode((640, 480))
+
+controller = pygame.joystick.Joystick(0)
+controller.init()
 
 pygame.display.set_caption('RaspiRobot')
 pygame.mouse.set_visible(0)
 
 state = None
-
 blink_state = 1
-
 timer = 0
 
+
+CONTROLLER_PAD_UP = 4
+CONTROLLER_PAD_RIGHT = 5
+CONTROLLER_PAD_DOWN = 6
+CONTROLLER_PAD_LEFT = 7
 
 def reverse():
     global state
@@ -93,6 +101,9 @@ while True:
                     left()
                 elif event.key == pygame.K_SPACE:
                     stop()
+            elif event.type == pygame.JOYBUTTONDOWN:
+                if event.button == CONTROLLER_PAD_UP:
+                    forward()
 
         execute_state()
 
