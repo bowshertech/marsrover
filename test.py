@@ -76,7 +76,6 @@ def execute_state():
         if timer > 10000:
             timer = 0
 
-
 while True:
     try:
         for event in pygame.event.get():
