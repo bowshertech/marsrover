@@ -18,33 +18,33 @@ blink_state = 1
 timer = 0
 
 
-def forward():
+def reverse():
     global state
-    state = "forward"
+    state = "reverse"
     rr.set_led1(1)
     rr.set_led2(1)
     rr.forward()
 
 
-def reverse():
+def forward():
     global state
-    state = "reverse"
+    state = "forward"
     rr.set_led1(0)
     rr.set_led2(0)
     rr.reverse()
 
 
-def left():
+def right():
     global state
-    state = "left"
+    state = "right"
     rr.set_led1(0)
     rr.set_led2(1)
     rr.left()
 
 
-def right():
+def left():
     global state
-    state = "right"
+    state = "left"
     rr.set_led1(1)
     rr.set_led2(0)
     rr.right()
