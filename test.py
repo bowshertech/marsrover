@@ -38,24 +38,24 @@ def reverse():
 def forward():
     global state
     state = "forward"
-    rr.set_led1(0)
-    rr.set_led2(0)
+    rr.set_led1(1)
+    rr.set_led2(1)
     rr.reverse()
 
 
 def right():
     global state
     state = "right"
-    rr.set_led1(0)
-    rr.set_led2(1)
+    rr.set_led1(1)
+    rr.set_led2(0)
     rr.left()
 
 
 def left():
     global state
     state = "left"
-    rr.set_led1(1)
-    rr.set_led2(0)
+    rr.set_led1(0)
+    rr.set_led2(1)
     rr.right()
 
 
@@ -79,7 +79,7 @@ def execute_state():
     timer += 1
 
     if state == "reverse":
-        if timer % 5000 == 0:
+        if timer % 1000 == 0:
             blinkleds()
 
         if timer > 10000:
