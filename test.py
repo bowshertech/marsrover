@@ -25,7 +25,7 @@ CONTROLLER_PAD_UP = 4
 CONTROLLER_PAD_RIGHT = 5
 CONTROLLER_PAD_DOWN = 6
 CONTROLLER_PAD_LEFT = 7
-
+CONTROLLER_PAD_STOP= 14
 def reverse():
     global state
     state = "reverse"
@@ -105,11 +105,17 @@ while True:
                 if event.button == CONTROLLER_PAD_UP:
                     forward()
                 if event.button == CONTROLLER_PAD_DOWN:
-                    backward()
+                    reverse()
                 if event.button == CONTROLLER_PAD_LEFT:
                     left()
                 if event.button == CONTROLLER_PAD_RIGHT:
                     right()
+                if event.button == CONTROLLER_PAD_STOP:
+                    stop()
+
+
+
+
 
 
         execute_state()
