@@ -104,11 +104,11 @@ while True:
             elif event.type == pygame.JOYBUTTONDOWN:
                 if event.button == CONTROLLER_PAD_UP:
                     forward()
-                if event.button == CONTROLLER_PAD_DOWN
+                if event.button == CONTROLLER_PAD_DOWN:
                     backward()
-                if event.button == CONTROLLER_PAD_LEFT
+                if event.button == CONTROLLER_PAD_LEFT:
                     left()
-                if event.button == CONTROLLER_PAD_RIGHT
+                if event.button == CONTROLLER_PAD_RIGHT:
                     right()
 
 
