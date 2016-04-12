@@ -65,16 +65,12 @@ class PS4Controller(object):
                 os.system('cls')
                 if self.button_data[4]:
                     pprint.pprint("Up button on arrow pad pressed!")
-                if self.button_data[5]:
+                if self.button_data[5, 11]:
                     pprint.pprint("Right button on arrow pad pressed!")
                 if self.button_data[6]:
                     pprint.pprint("Down button on arrow pad pressed!")
-                if self.button_data[7]:
+                if self.button_data[7, 10]:
                     pprint.pprint("Left button on arrow pad pressed!")
-                if self.button_data[9]:
-                    pprint.pprint("Right trigger on controller pressed!")
-                if self.button_data[8]:
-                    pprint.pprint("Left trigger on controller pressed!")
                 if self.button_data[14]:
                     pprint.pprint("Stop button on action pad pressed!")
 
