@@ -28,7 +28,8 @@ CONTROLLER_PAD_LEFT = 7
 CONTROLLER_PAD_STOP= 14
 CONTROLLER_TRIGGER_UP= 9
 CONTROLLER_TRIGGER_DOWN= 8
-
+CONTROLLER_BUMPER_LEFT = 10
+CONTROLLER_BUMPER_RIGHT = 11
 
 def reverse():
     global state
@@ -120,6 +121,10 @@ while True:
                     forward()
                 if event.button == CONTROLLER_TRIGGER_DOWN:
                     reverse()
+                if event.button == CONTROLLER_BUMPER_LEFT:
+                    left()
+                if event.button == CONTROLLER_BUMPER_RIGHT:
+                    right()
 
 
 
